@@ -1,8 +1,17 @@
 import ballerina/graphql;
 
+type Customer record {|
+    string id;
+    record {
+        string firstName;
+        string lastName;
+    } name;
+    int age;
+|};
+
 @display {
-	label: "FooGQL",
-	id: "FooGQL-f243d71b-be39-4273-9108-a6d0fc46b22b"
+	label: "CustomerService",
+	id: "CustomerService-28df60fa-b9c9-49ad-b7fa-6c0ae6b8f728"
 }
 service / on new graphql:Listener(9090) {
 
